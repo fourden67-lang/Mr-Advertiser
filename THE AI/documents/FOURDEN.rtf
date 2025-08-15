@@ -1,0 +1,330 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 <!DOCTYPE html>\par
+<html lang="en">\par
+<head>\par
+  <meta charset="UTF-8">\par
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">\par
+  <title>FOURDEN AI</title>\par
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />\par
+  <link rel="stylesheet" href="css/style.css">\par
+  <style>\par
+    body \{\par
+      margin: 0;\par
+      font-family: 'Inter', sans-serif;\par
+      color: #222;\par
+      min-height: 100vh;\par
+      background: linear-gradient(270deg, #ff4e4e, #2d2dff, #00b894, #fdcb6e, #6c5ce7, #ff4e4e);\par
+      background-size: 1200% 1200%;\par
+      animation: insaneGradient 18s ease-in-out infinite;\par
+    \}\par
+    @keyframes insaneGradient \{\par
+      0% \{ background-position: 0% 50%; \}\par
+      25% \{ background-position: 50% 100%; \}\par
+      50% \{ background-position: 100% 50%; \}\par
+      75% \{ background-position: 50% 0%; \}\par
+      100% \{ background-position: 0% 50%; \}\par
+    \}\par
+    .colorful-text \{ color: #ff4e4e; \}\par
+    .primary \{ color: #2d2dff; \}\par
+    .secondary \{ color: #00b894; \}\par
+    .highlight \{ color: #fdcb6e; \}\par
+    .accent \{ color: #6c5ce7; \}\par
+    .btn \{\par
+      padding: 1rem 2rem;\par
+      background: #ff4e4e;\par
+      color: white;\par
+      border: none;\par
+      border-radius: 10px;\par
+      font-size: 1rem;\par
+      cursor: pointer;\par
+      transition: background 0.3s;\par
+    \}\par
+    .btn:hover \{ background: #e64040; \}\par
+    section \{\par
+      padding: 4rem 2rem;\par
+      max-width: 1100px;\par
+      margin: auto;\par
+    \}\par
+    .input-area textarea \{\par
+      width: 100%;\par
+      padding: 1rem;\par
+      font-size: 1rem;\par
+      border-radius: 10px;\par
+      border: 1px solid #ccc;\par
+      margin-top: 1rem;\par
+      color: #6c5ce7;\par
+    \}\par
+    .templates, .use-cases \{\par
+      display: grid;\par
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\par
+      gap: 1.5rem;\par
+      margin-top: 2rem;\par
+    \}\par
+    .card \{\par
+      background: white;\par
+      border-radius: 15px;\par
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);\par
+      overflow: hidden;\par
+      transition: transform 0.3s;\par
+    \}\par
+    .card:hover \{ transform: translateY(-5px); \}\par
+    .card img \{ width: 100%; height: 180px; object-fit: cover; \}\par
+    .card-content \{ padding: 1rem; \}\par
+    .card-content h3 \{ color: #00b894; \}\par
+    .card-content p \{ color: #6c5ce7; \}\par
+    footer \{\par
+      background: #2d2dff;\par
+      color: white;\par
+      text-align: center;\par
+      padding: 3rem 1rem;\par
+    \}\par
+    footer h3 \{ margin-bottom: 1rem; color: #fdcb6e; \}\par
+    @media (max-width: 600px) \{\par
+      header h1 \{ font-size: 2rem; \}\par
+      header p \{ font-size: 1rem; \}\par
+    \}\par
+  </style>\par
+</head>\par
+<body>\par
+  <nav class="navbar advanced-navbar">\par
+    <div class="logo">\par
+      <img src="assets/logos/logo.svg" alt="Logo" height="40">\par
+      <span class="brand-title">FOURDEN AI</span>\par
+    </div>\par
+    <ul class="nav-links">\par
+      <li><a href="#input-area">Video Generator</a></li>\par
+      <li><a href="#templates">Templates</a></li>\par
+      <li><a href="#use-cases">Use Cases</a></li>\par
+      <li><a href="login.html" class="nav-auth">Login</a></li>\par
+      <li><a href="signup.html" class="nav-auth">Sign Up</a></li>\par
+    </ul>\par
+    <button id="darkModeToggle" title="Toggle dark mode"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/><path d="M12 2a10 10 0 0 0 0 20c5.523 0 10-4.477 10-10" fill="#18181b"/></svg></button>\par
+  </nav>\par
+  <header>\par
+    <video autoplay muted loop>\par
+      <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />\par
+    </video>\par
+    <h1 class="primary">FOURDEN AI</h1>\par
+    <p class="colorful-text">Turn your ideas into stunning videos instantly</p>\par
+    <button class="btn">Try it Now</button>\par
+  </header>\par
+  <section class="input-area" id="input-area">\par
+    <h2 class="accent">Put Your Thoughts Into Life</h2>\par
+    <label for="video-script" style="display:block; margin-bottom:0.5rem;">Video Script</label>\par
+    <textarea id="video-script" rows="6" placeholder="Write your video script here..." maxlength="500"></textarea>\par
+    <button class="btn" style="margin-top: 1rem;" onclick="validateInput()">Generate Video</button>\par
+  </section>\par
+  <section id="templates">\par
+    <h2 class="highlight">Popular Templates</h2>\par
+    <div class="section-video-bg">\par
+      <video autoplay muted loop playsinline width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1.5rem;">\par
+        <source src="assets/videos/templates-bg.mp4" type="video/mp4" />\par
+        Your browser does not support the video tag.\par
+      </video>\par
+    </div>\par
+    <div class="templates">\par
+      <!-- Template Card 1 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(1)">\par
+        <img class="template-img-1" src="assets/images/template1.jpg" alt="Template 1" />\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#00b894" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 8h14v-2H7v2zm0-4h14v-2H7v2zm0-6v2h14V7H7z"/></svg></span>Business Promo</h3>\par
+          <p>Make professional business ads quickly with AI scenes.</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-1">\par
+          <h4>Business Promo Preview</h4>\par
+          <img src="assets/images/template1.jpg" alt="Business Promo Preview" />\par
+          <button class="btn" onclick="hideTemplatePreview(1)">Close</button>\par
+        </div>\par
+      </div>\par
+      <!-- Template Card 2 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(2)">\par
+        <img class="template-img-2" src="assets/images/template2.jpg" alt="Template 2" />\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#fdcb6e" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-2.83.48-5.48-1.51-5.96-4.34-.09-.52.36-.99.89-.99.44 0 .81.32.89.75.34 1.81 2.01 3.08 3.83 2.74 1.81-.34 3.08-2.01 2.74-3.83-.34-1.81-2.01-3.08-3.83-2.74-.52.09-.99-.36-.99-.89 0-.44.32-.81.75-.89 2.83-.48 5.48 1.51 5.96 4.34.09.52-.36.99-.89.99-.44 0-.81-.32-.89-.75-.34-1.81-2.01-3.08-3.83-2.74-1.81.34-3.08 2.01-2.74 3.83.34 1.81 2.01 3.08 3.83 2.74.52-.09.99.36.99.89 0 .44-.32.81-.75.89z"/></svg></span>Marketing Campaign</h3>\par
+          <p>Run Facebook & TikTok ad videos from just text.</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-2">\par
+          <h4>Marketing Campaign Preview</h4>\par
+          <!-- Video removed: No external URL allowed -->\par
+          <button class="btn" onclick="hideTemplatePreview(2)">Close</button>\par
+        </div>\par
+      </div>\par
+      <!-- Template Card 3 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(3)">\par
+        <img class="template-img-3" src="assets/images/template3.jpg" alt="Template3"/>\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#2d2dff" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 2.18L18.6 9 12 12.82 5.4 9 12 5.18zM7 17v2h10v-2H7z"/></svg></span>Education Templates</h3>\par
+          <p>Templates for educational content and e-learning.</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-3">\par
+          <h4>Education Templates Preview</h4>\par
+          <img src="assets/images/template3.jpg" alt="Education Preview" />\par
+          <button class="btn" onclick="hideTemplatePreview(3)">Close</button>\par
+        </div>\par
+      </div>\par
+      <!-- Template Card 4 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(4)">\par
+        <img class="template-img-4" src="assets/images/template4.jpg" alt="Template 4"/>\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#ff4e4e" viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span>Brand Influencer</h3>\par
+          <p>Run online ad videos from just text.</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-4">\par
+          <h4>Brand Influencer Preview</h4>\par
+          <img src="assets/images/template4.jpg" alt="Brand Influencer Preview" />\par
+          <button class="btn" onclick="hideTemplatePreview(4)">Close</button>\par
+        </div>\par
+      </div>\par
+      <!-- Template Card 5 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(5)">\par
+        <img class="template-img-5" src="assets/images/template5.jpg" alt="Template 5"/>\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#6c5ce7" viewBox="0 0 24 24"><path d="M7 7h10v10H7z" opacity=".3"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg></span>Social Media Graphics</h3>\par
+          <p>This can be a lot of things: Instagram stories and posts, Pinterest pins, Facebook posts, Youtube banners, etc.</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-5">\par
+          <h4>Social Media Graphics Preview</h4>\par
+          <img src="assets/images/template5.jpg" alt="Social Media Graphics Preview" />\par
+          <button class="btn" onclick="hideTemplatePreview(5)">Close</button>\par
+        </div>\par
+      </div>\par
+      <!-- Template Card 6 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(6)">\par
+        <img class="template-img-6" src="assets/images/template6.jpg" alt="Template 6"/>\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#fdcb6e" viewBox="0 0 24 24"><path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H8V4h11v16zM6 6H4v2h2V6zm0 4H4v2h2v-2zm0 4H4v2h2v-2z"/></svg></span>Workbooks</h3>\par
+          <p>Educational workbooks for kids<br>Coloring books<br>KDP-ready layouts<br>Printable worksheets</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-6">\par
+          <h4>Workbooks Preview</h4>\par
+          <img src="assets/images/template6.jpg" alt="Workbooks Preview" />\par
+          <button class="btn" onclick="hideTemplatePreview(6)">Close</button>\par
+        </div>\par
+      </div>\par
+      <!-- Template Card 7 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(7)">\par
+        <img class="template-img-7" src="assets/images/template7.jpg" alt="Template 7"/>\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#00b894" viewBox="0 0 24 24"><path d="M3 17h2v-7H3v7zm4 0h2v-4H7v4zm4 0h2v-10h-2v10zm4 0h2v-2h-2v2zm4 0h2v-13h-2v13z"/></svg></span>Infographics</h3>\par
+          <p>Timeline and roadmap infographics<br>SWOT analysis<br>Team structures<br>Interactive infographics</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-7">\par
+          <h4>Infographics Preview</h4>\par
+          <img src="assets/images/template7.jpg" alt="Infographics Preview" />\par
+          <button class="btn" onclick="hideTemplatePreview(7)">Close</button>\par
+        </div>\par
+      </div>\par
+      <!-- Template Card 8 -->\par
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(8)">\par
+        <img class="template-img-8" src="assets/images/template8.jpg" alt="Template 8"/>\par
+        <div class="card-content">\par
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#ff4e4e" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg></span>Posters</h3>\par
+          <p>Event posters<br>Business promotions<br>School, sports, awareness<br>Concerts, parties, missing persons<br>Motivational posters</p>\par
+        </div>\par
+        <div class="template-overlay" id="template-preview-8">\par
+          <h4>Posters Preview</h4>\par
+          <img src="assets/images/template8.jpg" alt="Posters Preview" />\par
+          <button class="btn" onclick="hideTemplatePreview(8)">Close</button>\par
+        </div>\par
+      </div>\par
+    </div>\par
+  </section>\par
+  <style>\par
+    .template-card \{ position: relative; cursor: pointer; \}\par
+    .template-card:focus, .template-card:hover \{ box-shadow: 0 0 0 4px #fdcb6e44; \}\par
+    .template-overlay \{\par
+      display: none;\par
+      position: absolute;\par
+      top: 0; left: 0; right: 0; bottom: 0;\par
+      background: rgba(255,255,255,0.95);\par
+      z-index: 10;\par
+      padding: 2rem;\par
+      text-align: center;\par
+      border-radius: 15px;\par
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);\par
+    \}\par
+    .template-card.active .template-overlay \{ display: block; \}\par
+  </style>\par
+\par
+      <!-- ...existing template cards code... -->\par
+      <!-- Copy your template cards here -->\par
+    </div>\par
+  </section>\par
+  <section id="use-cases">\par
+    <h2 class="primary">Use Cases</h2>\par
+    <div class="section-video-bg">\par
+      <video autoplay muted loop playsinline width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1.5rem;">\par
+        <source src="assets/videos/cases-bg.mp4" type="video/mp4" />\par
+        Your browser does not support the video tag.\par
+      </video>\par
+    </div>\par
+    <div class="use-cases">\par
+      <div class="card">\par
+        <img src="assets/images/usecase1.jpg" alt="Use Case 1" />\par
+        <div class="card-content">\par
+          <h3 class="accent">Ads & Promotion</h3>\par
+        </div>\par
+      </div>\par
+      <div class="card">\par
+        <img src="assets/images/usecase2.jpg" alt="Use Case 2" />\par
+        <div class="card-content">\par
+          <h3 class="accent">Vlogging & YouTube</h3>\par
+        </div>\par
+      </div>\par
+      <div class="card">\par
+        <img src="assets/images/usecase3.jpg" alt="Use Case 3" />\par
+        <div class="card-content">\par
+          <h3 class="accent">Online Shops</h3>\par
+        </div>\par
+      </div>\par
+    </div>\par
+  </section>\par
+  <footer>\par
+  <script>\par
+    function showTemplatePreview(n) \{\par
+      document.querySelectorAll('.template-card').forEach(card => card.classList.remove('active'));\par
+      document.querySelector('.template-card:nth-child(' + n + ')').classList.add('active');\par
+    \}\par
+    function hideTemplatePreview(n) \{\par
+      document.querySelector('.template-card:nth-child(' + n + ')').classList.remove('active');\par
+    \}\par
+  </script>\par
+    <h3 class="highlight">Ready to create your AI-powered video?</h3>\par
+    <button class="btn">Drop your thoughts here</button>\par
+    <div class="social">\par
+      <a href="#" title="Twitter" class="social-icon">\par
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 5.92c-.82.36-1.7.61-2.62.72a4.48 4.48 0 0 0 1.97-2.48c-.87.52-1.83.9-2.85 1.1A4.48 4.48 0 0 0 12 8.5c0 .35.04.7.1 1.03C8.09 9.4 4.8 7.7 2.67 5.13c-.38.65-.6 1.4-.6 2.2 0 1.52.77 2.86 1.94 3.65-.72-.02-1.4-.22-1.99-.55v.06c0 2.13 1.52 3.9 3.54 4.3-.37.1-.76.16-1.16.16-.28 0-.55-.03-.81-.08.56 1.74 2.18 3.01 4.1 3.05A9.02 9.02 0 0 1 2 19.54c-.62 0-1.23-.04-1.83-.11A12.77 12.77 0 0 0 7.29 21c8.29 0 12.83-6.87 12.83-12.83 0-.2 0-.39-.01-.58A9.18 9.18 0 0 0 22 5.92z" fill="#10b981"/></svg>\par
+      </a>\par
+      <a href="#" title="GitHub" class="social-icon">\par
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.15-1.1-1.46-1.1-1.46-.9-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 7.43c.85.004 1.71.11 2.51.32 1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.85-2.34 4.7-4.57 4.95.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12c0-5.52-4.48-10-10-10z" fill="#5b21b6"/></svg>\par
+      </a>\par
+      <a href="#" title="LinkedIn" class="social-icon">\par
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="4" fill="#10b981"/><rect x="6" y="8" width="2" height="8" fill="#18181b"/><rect x="10" y="8" width="2" height="8" fill="#18181b"/><rect x="14" y="8" width="2" height="8" fill="#18181b"/></svg>\par
+      </a>\par
+    </div>\par
+  </footer>\par
+  <script>\par
+    const forbidden = /https?:\\/\\/|www\\.|\\.com|\\.net|\\.org|>/;\par
+    const textarea = document.getElementById('video-script');\par
+    let lastValue = '';\par
+    if (textarea) \{\par
+      textarea.addEventListener('input', function() \{\par
+        if (!forbidden.test(lastValue) && forbidden.test(textarea.value)) \{\par
+          window.close();\par
+        \}\par
+        lastValue = textarea.value;\par
+      \});\par
+    \}\par
+    function validateInput() \{\par
+      if (forbidden.test(textarea.value)) \{\par
+        window.close();\par
+        return false;\par
+      \}\par
+      alert('Your script is accepted!');\par
+    \}\par
+  </script>\par
+</body>\par
+</html>\par
+}
+ 

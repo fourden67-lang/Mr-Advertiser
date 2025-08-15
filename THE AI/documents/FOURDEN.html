@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI CREATOR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar advanced-navbar">
+    <div class="logo">
+      <img src="assets/logos/logo.svg" alt="Logo" height="40">
+      <span class="brand-title">AI CREATOR</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#input-area">Video Generator</a></li>
+      <li><a href="#templates">Templates</a></li>
+      <li><a href="#use-cases">Use Cases</a></li>
+      <li><a href="login.html" class="nav-auth">Login</a></li>
+      <li><a href="signup.html" class="nav-auth">Sign Up</a></li>
+    </ul>
+    <button id="darkModeToggle" title="Toggle dark mode"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#10b981" stroke-width="2"/><path d="M12 2a10 10 0 0 0 0 20c5.523 0 10-4.477 10-10" fill="#18181b"/></svg></button>
+  </nav>
+  <header>
+    <video autoplay muted loop>
+     
+    </video>
+    <h1 class="primary">AI CREATOR</h1>
+    <p class="colorful-text">Turn your ideas into stunning videos instantly</p>
+    <button class="btn">Try it Now</button>
+  </header>
+  <section class="input-area" id="input-area">
+    <h2 class="accent">Put Your Thoughts Into Life</h2>
+    <label for="video-script" style="display:block; margin-bottom:0.5rem;">Video Script</label>
+    <textarea id="video-script" rows="6" placeholder="Write your video script here..." maxlength="500"></textarea>
+    <button class="btn" style="margin-top: 1rem;" onclick="validateInput()">Generate Video</button>
+  </section>
+  <section id="templates">
+    <h2 class="highlight">Popular Templates</h2>
+    <div class="section-video-bg">
+      <video autoplay muted loop playsinline width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1.5rem;">
+        <source src="assets/videos/templates-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="templates">
+      <!-- Template Card 1 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(1)">
+        <img class="template-img-1" src="assets/images/template1.jpg" alt="Template 1" />
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/12981875_2160_4096_60fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#00b894" viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 8h14v-2H7v2zm0-4h14v-2H7v2zm0-6v2h14V7H7z"/></svg></span>Business Promo</h3>
+          <p>Make professional business ads quickly with AI scenes.</p>
+        </div>
+        <div class="template-overlay" id="template-preview-1">
+          <h4>Business Promo Preview</h4>
+          <img src="assets/images/template1.jpg" alt="Business Promo Preview" />
+          <button class="btn" onclick="hideTemplatePreview(1)">Close</button>
+        </div>
+      </div>
+      <!-- Template Card 2 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(2)">
+        <img class="template-img-2" src="assets/images/template2.jpg" alt="Template 2" />
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/1723017-uhd_3840_2160_25fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#fdcb6e" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-2.83.48-5.48-1.51-5.96-4.34-.09-.52.36-.99.89-.99.44 0 .81.32.89.75.34 1.81 2.01 3.08 3.83 2.74 1.81-.34 3.08-2.01 2.74-3.83-.34-1.81-2.01-3.08-3.83-2.74-.52.09-.99-.36-.99-.89 0-.44.32-.81.75-.89 2.83-.48 5.48 1.51 5.96 4.34.09.52-.36.99-.89.99-.44 0-.81-.32-.89-.75-.34-1.81-2.01-3.08-3.83-2.74-1.81.34-3.08 2.01-2.74 3.83.34 1.81 2.01 3.08 3.83 2.74.52-.09.99.36.99.89 0 .44-.32.81-.75.89z"/></svg></span>Marketing Campaign</h3>
+          <p>Run Facebook & TikTok ad videos from just text.</p>
+        </div>
+        <div class="template-overlay" id="template-preview-2">
+          <h4>Marketing Campaign Preview</h4>
+          <!-- Video removed: No external URL allowed -->
+          <button class="btn" onclick="hideTemplatePreview(2)">Close</button>
+        </div>
+      </div>
+      <!-- Template Card 3 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(3)">
+        <img class="template-img-3" src="assets/images/template3.jpg" alt="Template3"/>
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/1851768-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#2d2dff" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm0 2.18L18.6 9 12 12.82 5.4 9 12 5.18zM7 17v2h10v-2H7z"/></svg></span>Education Templates</h3>
+          <p>Templates for educational content and e-learning.</p>
+        </div>
+        <div class="template-overlay" id="template-preview-3">
+          <h4>Education Templates Preview</h4>
+          <img src="assets/images/template3.jpg" alt="Education Preview" />
+          <button class="btn" onclick="hideTemplatePreview(3)">Close</button>
+        </div>
+      </div>
+      <!-- Template Card 4 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(4)">
+        <img class="template-img-4" src="assets/images/template4.jpg" alt="Template 4"/>
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/5223113-hd_3840_2160_30fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#ff4e4e" viewBox="0 0 24 24"><path d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg></span>Brand Influencer</h3>
+          <p>Run online ad videos from just text.</p>
+        </div>
+        <div class="template-overlay" id="template-preview-4">
+          <h4>Brand Influencer Preview</h4>
+          <img src="assets/images/template4.jpg" alt="Brand Influencer Preview" />
+          <button class="btn" onclick="hideTemplatePreview(4)">Close</button>
+        </div>
+      </div>
+      <!-- Template Card 5 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(5)">
+        <img class="template-img-5" src="assets/images/template5.jpg" alt="Template 5"/>
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/5385341-uhd_2160_4096_30fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#6c5ce7" viewBox="0 0 24 24"><path d="M7 7h10v10H7z" opacity=".3"/><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg></span>Social Media Graphics</h3>
+          <p>This can be a lot of things: Instagram stories and posts, Pinterest pins, Facebook posts, Youtube banners, etc.</p>
+        </div>
+        <div class="template-overlay" id="template-preview-5">
+          <h4>Social Media Graphics Preview</h4>
+          <img src="assets/images/template5.jpg" alt="Social Media Graphics Preview" />
+          <button class="btn" onclick="hideTemplatePreview(5)">Close</button>
+        </div>
+      </div>
+      <!-- Template Card 6 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(6)">
+        <img class="template-img-6" src="assets/images/template6.jpg" alt="Template 6"/>
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/5590457-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#fdcb6e" viewBox="0 0 24 24"><path d="M19 2H8c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H8V4h11v16zM6 6H4v2h2V6zm0 4H4v2h2v-2zm0 4H4v2h2v-2z"/></svg></span>Workbooks</h3>
+          <p>Educational workbooks for kids<br>Coloring books<br>KDP-ready layouts<br>Printable worksheets</p>
+        </div>
+        <div class="template-overlay" id="template-preview-6">
+          <h4>Workbooks Preview</h4>
+          <img src="assets/images/template6.jpg" alt="Workbooks Preview" />
+          <button class="btn" onclick="hideTemplatePreview(6)">Close</button>
+        </div>
+      </div>
+      <!-- Template Card 7 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(7)">
+        <img class="template-img-7" src="assets/images/template7.jpg" alt="Template 7"/>
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/6785952-uhd_3840_2160_30fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#00b894" viewBox="0 0 24 24"><path d="M3 17h2v-7H3v7zm4 0h2v-4H7v4zm4 0h2v-10h-2v10zm4 0h2v-2h-2v2zm4 0h2v-13h-2v13z"/></svg></span>Infographics</h3>
+          <p>Timeline and roadmap infographics<br>SWOT analysis<br>Team structures<br>Interactive infographics</p>
+        </div>
+        <div class="template-overlay" id="template-preview-7">
+          <h4>Infographics Preview</h4>
+          <img src="assets/images/template7.jpg" alt="Infographics Preview" />
+          <button class="btn" onclick="hideTemplatePreview(7)">Close</button>
+        </div>
+      </div>
+      <!-- Template Card 8 -->
+      <div class="card template-card" tabindex="0" onclick="showTemplatePreview(8)">
+        <img class="template-img-8" src="assets/images/template8.jpg" alt="Template 8"/>
+        <video controls width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1rem;">
+          <source src="videos/12981875_2160_4096_60fps.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="card-content">
+          <h3 class="secondary"><span style="vertical-align:middle; margin-right:8px;"><svg width="22" height="22" fill="#ff4e4e" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z"/></svg></span>Posters</h3>
+          <p>Event posters<br>Business promotions<br>School, sports, awareness<br>Concerts, parties, missing persons<br>Motivational posters</p>
+        </div>
+        <div class="template-overlay" id="template-preview-8">
+          <h4>Posters Preview</h4>
+          <img src="assets/images/template8.jpg" alt="Posters Preview" />
+          <button class="btn" onclick="hideTemplatePreview(8)">Close</button>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+  <section id="use-cases">
+    <h2 class="primary">Use Cases</h2>
+    <div class="section-video-bg">
+      <video autoplay muted loop playsinline width="100%" height="180" style="object-fit:cover; border-radius:15px; margin-bottom:1.5rem;">
+        <source src="assets/videos/cases-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+       
+    </div>
+    <div class="use-cases">
+      <div class="card">
+        <img src="assets/images/usecase1.jpg" alt="Use Case 1" />
+        <div class="card-content">
+          <h3 class="accent">Ads & Promotion</h3>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/images/usecase2.jpg" alt="Use Case 2" />
+        <div class="card-content">
+          <h3 class="accent">Vlogging & YouTube</h3>
+        </div>
+      </div>
+      <div class="card">
+        <img src="assets/images/usecase3.jpg" alt="Use Case 3" />
+        <div class="card-content">
+          <h3 class="accent">Online Shops</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+   <h3> <header></header></h3>
